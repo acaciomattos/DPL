@@ -1,0 +1,84 @@
+{
+  "scenario_id": "guided-bundle-candidatemrecent_income_stabilitymgtm0_6871mapprove-candidatemcredit_scoremgtm329mapprove",
+  "scenario_name": "Guided bundle: approve",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.8803,
+    "review_rate": 0.0,
+    "rejection_rate": 0.1197,
+    "expected_profit": 105.92525099999997,
+    "expected_profit_index": 102.27304724417027,
+    "risk_estimate": 0.14449619447915482,
+    "churn_estimate": 0.15926388731114394,
+    "out_of_support_ratio": 0.3678859479722822,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "credit_score",
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "recent_income_stability",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 6,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17055
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 551
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2394
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17606
+    },
+    {
+      "decision": "reject",
+      "count": 2394
+    }
+  ],
+  "created_at": "2026-05-06T08:41:50.481519+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "guided_search",
+      "rule_bundle_candidate"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "rule_bundle_candidate",
+      "summary": "approve when recent_income_stability > 0.6871; approve when credit_score > 329",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when recent_income_stability > 0.6871",
+        "approve when credit_score > 329"
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "scenario_id": "rule-candidatemsignalmx8mx1mapprove",
+  "name": "Add rule: approve when any of x8 == 0 or x1 == 0",
+  "description": "Simple rule candidate generated from an analysis feature outside the baseline structure.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "candidate-signal-x8-x1-approve",
+        "name": "approve when any of x8 or x1",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-signal-x8-x1-approve-block",
+            "name": "x8-x1 signals",
+            "predicates": [
+              {
+                "field": "x8",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x1",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Signal bundle candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "parameter_sweep",
+        "candidate_kind": "signal_bundle_candidate",
+        "summary": "approve when any of x8 == 0 or x1 == 0",
+        "threshold_overrides": {},
+        "added_rules": [
+          "approve when any of x8 == 0 or x1 == 0"
+        ]
+      }
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "signal_bundle_candidate",
+    "guided_search"
+  ],
+  "created_at": "2026-05-06T08:30:23.520457+00:00"
+}

@@ -1,0 +1,65 @@
+{
+  "scenario_id": "rule-candidatemsignalmz1mx4mapprove",
+  "scenario_name": "Add rule: approve when any of z1 == 0 or x4 == 0",
+  "policy_id": "eligibility-baseline-scratch-search",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.9805,
+    "review_rate": 0.0,
+    "rejection_rate": 0.0195,
+    "expected_profit": 104.75433650000002,
+    "expected_profit_index": 101.14250478288898,
+    "risk_estimate": 0.21912289648138705,
+    "churn_estimate": 0.16068332483426823,
+    "out_of_support_ratio": 0.0,
+    "uncertainty_label": "low",
+    "complexity_score": 38.0,
+    "features_used": [
+      "x4",
+      "z1"
+    ],
+    "rules_count": 1,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 19610
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 390
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 19610
+    },
+    {
+      "decision": "reject",
+      "count": 390
+    }
+  ],
+  "created_at": "2026-05-06T08:24:53.009632+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "signal_bundle_candidate",
+      "guided_search"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "signal_bundle_candidate",
+      "summary": "approve when any of z1 == 0 or x4 == 0",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when any of z1 == 0 or x4 == 0"
+      ]
+    }
+  }
+}

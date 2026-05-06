@@ -1,0 +1,67 @@
+{
+  "scenario_id": "heuristic-3",
+  "scenario_name": "Heuristic candidate 3",
+  "policy_id": "eligibility-baseline-scratch-search",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.877,
+    "review_rate": 0.0,
+    "rejection_rate": 0.123,
+    "expected_profit": 106.09500150000007,
+    "expected_profit_index": 102.43694490542039,
+    "risk_estimate": 0.14954389965792475,
+    "churn_estimate": 0.1589509692132269,
+    "out_of_support_ratio": 0.04549600912200684,
+    "uncertainty_label": "low",
+    "complexity_score": 50.0,
+    "features_used": [
+      "debt_ratio",
+      "thin_file_watch_flag"
+    ],
+    "rules_count": 2,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 17540
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2460
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17540
+    },
+    {
+      "decision": "reject",
+      "count": 2460
+    }
+  ],
+  "created_at": "2026-05-06T08:23:03.165682+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [
+      "thin-file-watch-flag"
+    ],
+    "tags": [
+      "heuristic_search"
+    ],
+    "search_details": {
+      "strategy": "heuristic_search",
+      "candidate_kind": "guarded_rule_candidate",
+      "summary": "approve when debt_ratio < 0.6968; reject when thin_file_watch_flag == True",
+      "threshold_overrides": [],
+      "added_rules": [
+        "approve when debt_ratio < 0.6968",
+        "reject when thin_file_watch_flag == True"
+      ]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "scenario_id": "rule-candidatemscore1mgtm120mapprove",
+  "name": "Add rule: approve when score1 > 120",
+  "description": "Simple rule candidate generated from an analysis feature outside the baseline structure.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "candidate-score1-gt-120-approve",
+        "name": "approve when score1 > 120",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-score1-gt-120-approve-block",
+            "name": "score1 candidate block",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 120,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Simple rule candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "parameter_sweep",
+        "candidate_kind": "simple_rule_candidate",
+        "summary": "approve when score1 > 120",
+        "threshold_overrides": {},
+        "added_rules": [
+          "approve when score1 > 120"
+        ]
+      }
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "simple_rule_candidate",
+    "parameter_sweep"
+  ],
+  "created_at": "2026-05-06T08:30:23.519763+00:00"
+}

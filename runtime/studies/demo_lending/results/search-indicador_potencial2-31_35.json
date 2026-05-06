@@ -1,0 +1,80 @@
+{
+  "scenario_id": "search-indicador_potencial2-31_35",
+  "scenario_name": "Teste 3 :: reject: indicador_potencial2 >= 31.35",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.85275,
+    "review_rate": 0.0,
+    "rejection_rate": 0.14725,
+    "expected_profit": 105.31862150000005,
+    "expected_profit_index": 101.6873337629419,
+    "risk_estimate": 0.12934623277631194,
+    "churn_estimate": 0.15907358545880973,
+    "out_of_support_ratio": 0.28965112870126064,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 4,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17055
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2945
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17055
+    },
+    {
+      "decision": "reject",
+      "count": 2945
+    }
+  ],
+  "created_at": "2026-05-06T08:41:20.489109+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "threshold_override",
+      "summary": "Teste 3 :: reject: indicador_potencial2 >= 31.35",
+      "threshold_overrides": [
+        {
+          "rule_name": "Teste 3 :: reject",
+          "field": "indicador_potencial2",
+          "operator": ">=",
+          "value": 31.35
+        }
+      ],
+      "added_rules": []
+    }
+  }
+}

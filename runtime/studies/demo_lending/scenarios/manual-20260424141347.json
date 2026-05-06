@@ -1,0 +1,137 @@
+{
+  "scenario_id": "manual-20260424141347",
+  "name": "Cenario manual",
+  "description": "Cenario manual sobre Retail Lending Eligibility Pilot.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "approve-prime",
+        "name": "Approve resilient applicants",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "approve-prime-thresholds",
+            "name": "Resilient thresholds",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 340,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 18.0,
+                "description": ""
+              },
+              {
+                "field": "w1",
+                "operator": "<",
+                "value": 9,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "approve-prime-signals",
+            "name": "Resilient signals",
+            "predicates": [
+              {
+                "field": "x1",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x2",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x3",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x4",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Baseline rule based on score1, indicator_potencial1, w1 and the first set of baseline boolean signals."
+      },
+      {
+        "rule_id": "matrix-regra-editavel",
+        "name": "Regra editavel",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "matrix-cell-1",
+            "name": "Celula true x 0",
+            "predicates": [
+              {
+                "field": "thin_file_watch_flag",
+                "operator": "==",
+                "value": true,
+                "description": ""
+              },
+              {
+                "field": "z1",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-2",
+            "name": "Celula true x 1",
+            "predicates": [
+              {
+                "field": "thin_file_watch_flag",
+                "operator": "==",
+                "value": true,
+                "description": ""
+              },
+              {
+                "field": "z1",
+                "operator": "==",
+                "value": 1,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "any",
+        "description": "Regra criada na matriz de combinacao. Variaveis: thin_file_watch_flag x z1. Celulas selecionadas: 2."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search."
+    }
+  },
+  "feature_ids": [
+    "thin-file-watch-flag"
+  ],
+  "tags": [
+    "manual"
+  ],
+  "created_at": "2026-04-24T14:13:47.751119+00:00"
+}

@@ -1,0 +1,158 @@
+{
+  "scenario_id": "manual-20260412001016",
+  "name": "Manual scenario",
+  "description": "Manual scenario over Retail Lending Eligibility Pilot.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "derived-blended_quality_flag",
+        "name": "Derived veto: blended_quality_flag",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "derived-block-blended_quality_flag",
+            "name": "blended_quality_flag block",
+            "predicates": [
+              {
+                "field": "blended_quality_flag",
+                "operator": "==",
+                "value": true,
+                "description": "Reject when blended_quality_flag is triggered."
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Positive candidate signal built from non-baseline variables."
+      },
+      {
+        "rule_id": "derived-thin-file-watch-flag",
+        "name": "Derived veto: thin_file_watch_flag",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "derived-block-thin-file-watch-flag",
+            "name": "thin_file_watch_flag block",
+            "predicates": [
+              {
+                "field": "thin_file_watch_flag",
+                "operator": "==",
+                "value": true,
+                "description": "Reject when thin_file_watch_flag is triggered."
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Flags thin-file patterns among candidate variables."
+      },
+      {
+        "rule_id": "derived-risk-buffer-flag",
+        "name": "Derived veto: risk_buffer_flag",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "derived-block-risk-buffer-flag",
+            "name": "risk_buffer_flag block",
+            "predicates": [
+              {
+                "field": "risk_buffer_flag",
+                "operator": "==",
+                "value": true,
+                "description": "Reject when risk_buffer_flag is triggered."
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Reusable veto for unstable or high-risk applications."
+      },
+      {
+        "rule_id": "approve-stable",
+        "name": "Approve stable recoveries",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "approve-stable-thresholds",
+            "name": "Stable thresholds",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 340,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 18.0,
+                "description": ""
+              },
+              {
+                "field": "w1",
+                "operator": "<",
+                "value": 9,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "approve-stable-signals",
+            "name": "Stable recovery signals",
+            "predicates": [
+              {
+                "field": "x5",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x6",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x7",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x8",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Second baseline block covering remaining baseline signals x5 to x8 together with score1, w1 and indicator_potencial1."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search."
+    }
+  },
+  "feature_ids": [
+    "risk-buffer-flag",
+    "thin-file-watch-flag",
+    "blended_quality_flag"
+  ],
+  "tags": [
+    "manual"
+  ],
+  "created_at": "2026-04-12T00:10:16.284639+00:00"
+}

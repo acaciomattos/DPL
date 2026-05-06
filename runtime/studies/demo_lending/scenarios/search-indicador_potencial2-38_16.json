@@ -1,0 +1,2449 @@
+{
+  "scenario_id": "search-indicador_potencial2-38_16",
+  "name": "Teste 3 :: reject: indicador_potencial2 < 38.16",
+  "description": "Threshold scenario for indicador_potencial2.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "approve-prime",
+        "name": "Approve resilient applicants",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "approve-prime-thresholds",
+            "name": "Resilient thresholds",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 340,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 18,
+                "description": ""
+              },
+              {
+                "field": "w1",
+                "operator": "<",
+                "value": 9,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "approve-prime-signals",
+            "name": "Resilient signals",
+            "predicates": [
+              {
+                "field": "x1",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x2",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x3",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x4",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Baseline rule based on score1, indicator_potencial1, w1 and the first set of baseline boolean signals."
+      },
+      {
+        "rule_id": "matrix-teste-3-approve",
+        "name": "Teste 3 :: approve",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "matrix-cell-1",
+            "name": "Celula [112, 339) x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 112,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-2",
+            "name": "Celula [339, 373) x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-3",
+            "name": "Celula [373, 392) x [49.18, 56.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.18,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 56.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-4",
+            "name": "Celula [373, 392) x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-5",
+            "name": "Celula [392, 410) x [49.18, 56.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.18,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 56.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-6",
+            "name": "Celula [392, 410) x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-7",
+            "name": "Celula [410, 426) x [49.18, 56.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.18,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 56.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-8",
+            "name": "Celula [410, 426) x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-9",
+            "name": "Celula [426, 441) x [44.83, 49.18)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 44.83,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 49.18,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-10",
+            "name": "Celula [426, 441) x [49.18, 56.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.18,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 56.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-11",
+            "name": "Celula [426, 441) x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-12",
+            "name": "Celula [441, 460) x [44.83, 49.18)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 44.83,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 49.18,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-13",
+            "name": "Celula [441, 460) x [49.18, 56.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.18,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 56.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-14",
+            "name": "Celula [441, 460) x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-15",
+            "name": "Celula [460, 481) x [44.83, 49.18)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 44.83,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 49.18,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-16",
+            "name": "Celula [460, 481) x [49.18, 56.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.18,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 56.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-17",
+            "name": "Celula [460, 481) x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-18",
+            "name": "Celula [481, 509) x [44.83, 49.18)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 44.83,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 49.18,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-19",
+            "name": "Celula [481, 509) x [49.18, 56.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.18,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 56.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-20",
+            "name": "Celula [481, 509) x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-21",
+            "name": "Celula [509, 762] x [44.83, 49.18)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 44.83,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 49.18,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-22",
+            "name": "Celula [509, 762] x [49.18, 56.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.18,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 56.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-23",
+            "name": "Celula [509, 762] x [56.44, 93.94]",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 56.44,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "any",
+        "description": "Regra criada na matriz de combinacao. Variaveis: score2 x indicador_potencial2. Celulas selecionadas: 23."
+      },
+      {
+        "rule_id": "matrix-teste-3-reject",
+        "name": "Teste 3 :: reject",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "matrix-cell-1",
+            "name": "Celula [112, 339) x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 112,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-2",
+            "name": "Celula [112, 339) x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 112,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-3",
+            "name": "Celula [112, 339) x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 112,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-4",
+            "name": "Celula [112, 339) x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 112,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-5",
+            "name": "Celula [112, 339) x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 112,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.12,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-6",
+            "name": "Celula [339, 373) x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-7",
+            "name": "Celula [339, 373) x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-8",
+            "name": "Celula [339, 373) x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-9",
+            "name": "Celula [339, 373) x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-10",
+            "name": "Celula [339, 373) x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 339,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.12,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-11",
+            "name": "Celula [373, 392) x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-12",
+            "name": "Celula [373, 392) x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-13",
+            "name": "Celula [373, 392) x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-14",
+            "name": "Celula [373, 392) x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-15",
+            "name": "Celula [373, 392) x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 373,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.12,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-16",
+            "name": "Celula [392, 410) x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-17",
+            "name": "Celula [392, 410) x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-18",
+            "name": "Celula [392, 410) x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-19",
+            "name": "Celula [392, 410) x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-20",
+            "name": "Celula [392, 410) x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 392,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.12,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-21",
+            "name": "Celula [410, 426) x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-22",
+            "name": "Celula [410, 426) x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-23",
+            "name": "Celula [410, 426) x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-24",
+            "name": "Celula [410, 426) x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-25",
+            "name": "Celula [410, 426) x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 410,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.12,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-26",
+            "name": "Celula [426, 441) x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-27",
+            "name": "Celula [426, 441) x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-28",
+            "name": "Celula [426, 441) x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-29",
+            "name": "Celula [426, 441) x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-30",
+            "name": "Celula [426, 441) x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 426,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.12,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-31",
+            "name": "Celula [441, 460) x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-32",
+            "name": "Celula [441, 460) x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-33",
+            "name": "Celula [441, 460) x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-34",
+            "name": "Celula [441, 460) x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-35",
+            "name": "Celula [441, 460) x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 441,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.12,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-36",
+            "name": "Celula [460, 481) x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-37",
+            "name": "Celula [460, 481) x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-38",
+            "name": "Celula [460, 481) x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-39",
+            "name": "Celula [460, 481) x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-40",
+            "name": "Celula [460, 481) x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 460,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.12,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-41",
+            "name": "Celula [481, 509) x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-42",
+            "name": "Celula [481, 509) x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-43",
+            "name": "Celula [481, 509) x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-44",
+            "name": "Celula [481, 509) x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-45",
+            "name": "Celula [481, 509) x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 481,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.12,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-46",
+            "name": "Celula [509, 762] x [0, 21.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 21.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-47",
+            "name": "Celula [509, 762] x [21.32, 27.01)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 21.32,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 27.01,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-48",
+            "name": "Celula [509, 762] x [27.01, 31.27)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 27.01,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 31.27,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-49",
+            "name": "Celula [509, 762] x [31.27, 34.67)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 31.27,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 34.67,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-50",
+            "name": "Celula [509, 762] x [34.67, 38.12)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 509,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 34.67,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 38.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "any",
+        "description": "Regra criada na matriz de combinacao. Variaveis: score2 x indicador_potencial2. Celulas selecionadas: 50."
+      },
+      {
+        "rule_id": "approve-stable",
+        "name": "Approve stable recoveries",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "approve-stable-thresholds",
+            "name": "Stable thresholds",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 360,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 20,
+                "description": ""
+              },
+              {
+                "field": "w1",
+                "operator": "<",
+                "value": 9,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "approve-stable-signals",
+            "name": "Stable recovery signals",
+            "predicates": [
+              {
+                "field": "x5",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x6",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x7",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x8",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Second baseline block covering remaining baseline signals x5 to x8 together with score1, w1 and indicator_potencial1."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "last_simulation",
+      "search_details": {
+        "strategy": "parameter_sweep",
+        "candidate_kind": "threshold_override",
+        "summary": "Teste 3 :: reject: indicador_potencial2 < 38.16",
+        "threshold_overrides": [
+          {
+            "rule_name": "Teste 3 :: reject",
+            "field": "indicador_potencial2",
+            "operator": "<",
+            "value": 38.16
+          }
+        ],
+        "added_rules": []
+      }
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "parameter_sweep"
+  ],
+  "created_at": "2026-05-06T08:33:36.118227+00:00"
+}

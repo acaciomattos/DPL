@@ -1,0 +1,83 @@
+{
+  "scenario_id": "search-feature-thin-file-watch-flag",
+  "scenario_name": "Derived veto thin_file_watch_flag",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.8345,
+    "review_rate": 0.0,
+    "rejection_rate": 0.1655,
+    "expected_profit": 105.10485,
+    "expected_profit_index": 101.48093290467098,
+    "risk_estimate": 0.11995206710605152,
+    "churn_estimate": 0.15877771120431397,
+    "out_of_support_ratio": 0.2871779508687837,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "thin_file_watch_flag",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 5,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 16690
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 365
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2945
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 16690
+    },
+    {
+      "decision": "reject",
+      "count": 3310
+    }
+  ],
+  "created_at": "2026-05-06T08:41:36.439985+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [
+      "thin-file-watch-flag"
+    ],
+    "tags": [
+      "derived_feature"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "derived_veto",
+      "summary": "reject when thin_file_watch_flag == True",
+      "threshold_overrides": {},
+      "added_rules": [
+        "reject when thin_file_watch_flag == True"
+      ]
+    }
+  }
+}

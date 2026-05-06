@@ -1,0 +1,96 @@
+{
+  "scenario_id": "guided-score1-260-indicador_potencial2-34_49",
+  "scenario_name": "Approve resilient applicants: score1 > 260 | Teste 3 :: approve: indicador_potencial2 <= 34.49",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.88725,
+    "review_rate": 0.0,
+    "rejection_rate": 0.11275,
+    "expected_profit": 105.96247449999998,
+    "expected_profit_index": 102.30898731264455,
+    "risk_estimate": 0.14826711749788674,
+    "churn_estimate": 0.15942519019442097,
+    "out_of_support_ratio": 0.2947309101155255,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 4,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17037
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 18
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 708
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2237
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17745
+    },
+    {
+      "decision": "reject",
+      "count": 2255
+    }
+  ],
+  "created_at": "2026-05-06T08:41:49.170327+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "guided_search"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "threshold_pair",
+      "summary": "Approve resilient applicants: score1 > 260; Teste 3 :: approve: indicador_potencial2 <= 34.49",
+      "threshold_overrides": [
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "score1",
+          "operator": ">",
+          "value": 260
+        },
+        {
+          "rule_name": "Teste 3 :: approve",
+          "field": "indicador_potencial2",
+          "operator": "<=",
+          "value": 34.49
+        }
+      ],
+      "added_rules": []
+    }
+  }
+}

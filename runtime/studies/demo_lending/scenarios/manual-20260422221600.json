@@ -1,0 +1,531 @@
+{
+  "scenario_id": "manual-20260422221600",
+  "name": "Cenario manual",
+  "description": "Cenario manual sobre Retail Lending Eligibility Pilot.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "approve-stable",
+        "name": "Approve stable recoveries",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "approve-stable-thresholds",
+            "name": "Stable thresholds",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 360,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 20.0,
+                "description": ""
+              },
+              {
+                "field": "w1",
+                "operator": "<",
+                "value": 9,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "approve-stable-signals",
+            "name": "Stable recovery signals",
+            "predicates": [
+              {
+                "field": "x5",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x6",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x7",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x8",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Second baseline block covering remaining baseline signals x5 to x8 together with score1, w1 and indicator_potencial1."
+      },
+      {
+        "rule_id": "matrix-teste-1",
+        "name": "Teste 1",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "matrix-cell-1",
+            "name": "Celula [521, 762] x [0.02, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 521,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-2",
+            "name": "Celula [489, 521) x [0.02, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 489,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 521,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-3",
+            "name": "Celula [521, 762] x [0.2, 0.29)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 521,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.29,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-4",
+            "name": "Celula [489, 521) x [0.2, 0.29)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 489,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 521,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.29,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-5",
+            "name": "Celula [467, 489) x [0.02, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 467,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 489,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-6",
+            "name": "Celula [467, 489) x [0.2, 0.29)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 467,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 489,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.29,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-7",
+            "name": "Celula [450, 467) x [0.2, 0.29)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 450,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 467,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.29,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-8",
+            "name": "Celula [450, 467) x [0.02, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 450,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 467,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-9",
+            "name": "Celula [450, 467) x [0.29, 0.35)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 450,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 467,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.29,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.35,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-10",
+            "name": "Celula [467, 489) x [0.29, 0.35)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 467,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 489,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.29,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.35,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-11",
+            "name": "Celula [489, 521) x [0.29, 0.35)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 489,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 521,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.29,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.35,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-12",
+            "name": "Celula [521, 762] x [0.29, 0.35)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 521,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.29,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.35,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-13",
+            "name": "Celula [418, 433) x [0.41, 0.47)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 418,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 433,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.41,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.47,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-14",
+            "name": "Celula [402, 418) x [0.47, 0.53)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 402,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 418,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": ">=",
+                "value": 0.47,
+                "description": ""
+              },
+              {
+                "field": "recent_income_stability",
+                "operator": "<",
+                "value": 0.53,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "any",
+        "description": "Regra criada na matriz de combinacao. Variaveis: score2 x recent_income_stability. Celulas selecionadas: 14."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search."
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "manual"
+  ],
+  "created_at": "2026-04-22T22:16:00.343189+00:00"
+}

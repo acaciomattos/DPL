@@ -1,0 +1,80 @@
+{
+  "scenario_id": "rule-z3-eq-1-approve",
+  "scenario_name": "Add rule: approve when z3 == 1",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.84295,
+    "review_rate": 0.0,
+    "rejection_rate": 0.15705,
+    "expected_profit": 103.28638599999996,
+    "expected_profit_index": 99.72516784555559,
+    "risk_estimate": 0.14372145441603892,
+    "churn_estimate": 0.1573640192182217,
+    "out_of_support_ratio": 0.15979595468295865,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "score1",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8",
+      "z3"
+    ],
+    "rules_count": 3,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 16126
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 733
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 3141
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 16859
+    },
+    {
+      "decision": "reject",
+      "count": 3141
+    }
+  ],
+  "created_at": "2026-05-05T17:11:38.949841+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "baseline",
+    "feature_ids": [],
+    "tags": [
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "objective_performance": -46.5296,
+    "objective_performance_details": {
+      "approval_delta": 3.665,
+      "profit_gain": -0.2748,
+      "risk_penalty": 18.7443,
+      "support_penalty": 19.1755,
+      "complexity_penalty": 12.0,
+      "risk_comfort_threshold": 0.05
+    }
+  }
+}

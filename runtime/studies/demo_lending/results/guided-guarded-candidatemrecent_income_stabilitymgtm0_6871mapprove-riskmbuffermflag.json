@@ -1,0 +1,93 @@
+{
+  "scenario_id": "guided-guarded-candidatemrecent_income_stabilitymgtm0_6871mapprove-riskmbuffermflag",
+  "scenario_name": "Guided guarded rule: approve",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.61765,
+    "review_rate": 0.0,
+    "rejection_rate": 0.38235,
+    "expected_profit": 93.53355,
+    "expected_profit_index": 90.30860052495854,
+    "risk_estimate": 0.028252246417874202,
+    "churn_estimate": 0.1585040071237756,
+    "out_of_support_ratio": 0.278636768396341,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "recent_income_stability",
+      "risk_buffer_flag",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 6,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 12233
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 4822
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 120
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2825
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 12353
+    },
+    {
+      "decision": "reject",
+      "count": 7647
+    }
+  ],
+  "created_at": "2026-05-06T08:41:49.655506+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [
+      "risk-buffer-flag"
+    ],
+    "tags": [
+      "guided_search",
+      "guarded_rule_candidate",
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "guarded_rule_candidate",
+      "summary": "approve when recent_income_stability > 0.6871; reject when risk_buffer_flag == True",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when recent_income_stability > 0.6871",
+        "reject when risk_buffer_flag == True"
+      ]
+    }
+  }
+}

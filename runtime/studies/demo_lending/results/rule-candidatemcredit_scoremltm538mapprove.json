@@ -1,0 +1,82 @@
+{
+  "scenario_id": "rule-candidatemcredit_scoremltm538mapprove",
+  "scenario_name": "Add rule: approve when credit_score < 538",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.89875,
+    "review_rate": 0.0,
+    "rejection_rate": 0.10125,
+    "expected_profit": 105.72405900000003,
+    "expected_profit_index": 102.07879215648448,
+    "risk_estimate": 0.1579972183588317,
+    "churn_estimate": 0.1599443671766342,
+    "out_of_support_ratio": 0.31938803894297635,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "credit_score",
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 5,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17055
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 920
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2025
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17975
+    },
+    {
+      "decision": "reject",
+      "count": 2025
+    }
+  ],
+  "created_at": "2026-05-06T08:41:39.047269+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "simple_rule_candidate",
+      "summary": "approve when credit_score < 538",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when credit_score < 538"
+      ]
+    }
+  }
+}

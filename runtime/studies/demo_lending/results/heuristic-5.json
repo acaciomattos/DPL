@@ -1,0 +1,85 @@
+{
+  "scenario_id": "heuristic-5",
+  "scenario_name": "Heuristic candidate 5",
+  "policy_id": "eligibility-baseline-scratch-search",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.3717,
+    "review_rate": 0.0,
+    "rejection_rate": 0.6283,
+    "expected_profit": 61.40400500000005,
+    "expected_profit_index": 59.28685223834187,
+    "risk_estimate": 0.004708097928436911,
+    "churn_estimate": 0.16047888081786388,
+    "out_of_support_ratio": 0.04170029593758407,
+    "uncertainty_label": "low",
+    "complexity_score": 50.0,
+    "features_used": [
+      "indicador_potencial1",
+      "risk_buffer_flag"
+    ],
+    "rules_count": 2,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 7434
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 12566
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 7434
+    },
+    {
+      "decision": "reject",
+      "count": 12566
+    }
+  ],
+  "created_at": "2026-05-06T08:23:03.292719+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [
+      "risk-buffer-flag"
+    ],
+    "tags": [
+      "heuristic_search"
+    ],
+    "search_details": {
+      "strategy": "heuristic_search",
+      "candidate_kind": "guarded_rule_candidate",
+      "summary": "approve when indicador_potencial1 > 45.51; reject when risk_buffer_flag == True",
+      "threshold_overrides": [],
+      "added_rules": [
+        "approve when indicador_potencial1 > 45.51",
+        "reject when risk_buffer_flag == True"
+      ]
+    },
+    "objective_performance": 48.2828,
+    "objective_performance_details": {
+      "primary_metric": "profit_index",
+      "direction": "maximize",
+      "primary_gain": 59.2869,
+      "preserve_metric": "risk",
+      "max_degradation": 0.5,
+      "constraint_delta": 0.0,
+      "constraint_violated": false,
+      "support_penalty": 5.004,
+      "complexity_penalty": 6.0
+    },
+    "objective_spec": {
+      "primary_metric": "profit_index",
+      "direction": "maximize",
+      "preserve_metric": "risk",
+      "max_degradation": 0.5
+    }
+  }
+}

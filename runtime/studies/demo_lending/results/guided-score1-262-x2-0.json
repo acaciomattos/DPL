@@ -1,0 +1,100 @@
+{
+  "scenario_id": "guided-score1-262-x2-0",
+  "scenario_name": "Approve resilient applicants: score1 > 262 | Approve resilient applicants: x2 == 0",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.8874,
+    "review_rate": 0.0,
+    "rejection_rate": 0.1126,
+    "expected_profit": 106.08655499999996,
+    "expected_profit_index": 100.72874710965729,
+    "risk_estimate": 0.14762226729772368,
+    "churn_estimate": 0.15928555330178049,
+    "out_of_support_ratio": 0.29524453459544736,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 4,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17060
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 688
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2252
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17748
+    },
+    {
+      "decision": "reject",
+      "count": 2252
+    }
+  ],
+  "created_at": "2026-05-05T21:51:19.378739+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "guided_search"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "threshold_pair",
+      "summary": "Approve resilient applicants: score1 > 262; Approve resilient applicants: x2 == 0",
+      "threshold_overrides": [
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "score1",
+          "operator": ">",
+          "value": 262
+        },
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "x2",
+          "operator": "==",
+          "value": 0
+        }
+      ],
+      "added_rules": []
+    },
+    "objective_performance": -62.7851,
+    "objective_performance_details": {
+      "approval_delta": 3.44,
+      "profit_gain": 0.7287,
+      "risk_penalty": 19.5245,
+      "support_penalty": 35.4293,
+      "complexity_penalty": 12.0,
+      "risk_comfort_threshold": 0.05
+    }
+  }
+}

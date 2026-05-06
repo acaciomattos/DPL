@@ -1,0 +1,74 @@
+{
+  "scenario_id": "guided-rule-candidatemscore1mgtm546mapprove",
+  "scenario_name": "Guided rule candidate: approve when score1 > 546",
+  "policy_id": "eligibility-baseline-scratch-search",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.50075,
+    "review_rate": 0.0,
+    "rejection_rate": 0.49925,
+    "expected_profit": 69.46827450000002,
+    "expected_profit_index": 67.07307325530428,
+    "risk_estimate": 0.08746879680479282,
+    "churn_estimate": 0.14857713429855218,
+    "out_of_support_ratio": 0.08067898152770844,
+    "uncertainty_label": "medium",
+    "complexity_score": 25.0,
+    "features_used": [
+      "score1"
+    ],
+    "rules_count": 1,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 10015
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 9985
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 10015
+    },
+    {
+      "decision": "reject",
+      "count": 9985
+    }
+  ],
+  "created_at": "2026-05-05T22:41:17.418882+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "guided_search",
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "simple_rule_candidate",
+      "summary": "approve when score1 > 546",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when score1 > 546"
+      ]
+    },
+    "objective_performance": -3.0272,
+    "objective_performance_details": {
+      "approval_delta": 50.075,
+      "profit_gain": -32.9269,
+      "risk_penalty": 7.4938,
+      "support_penalty": 9.6815,
+      "complexity_penalty": 3.0,
+      "risk_comfort_threshold": 0.05
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "scenario_id": "search-score1-264",
+  "scenario_name": "score1 -> 264",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.852,
+    "review_rate": 0.0,
+    "rejection_rate": 0.148,
+    "expected_profit": 105.9795865,
+    "expected_profit_index": 109.10969583172863,
+    "risk_estimate": 0.1283450704225352,
+    "churn_estimate": 0.15774647887323945,
+    "out_of_support_ratio": 0.12904929577464788,
+    "uncertainty_label": "medium",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "score1",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 2,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 12122
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 914
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2773
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17040
+    },
+    {
+      "decision": "reject",
+      "count": 2960
+    }
+  ],
+  "created_at": "2026-04-12T01:16:07.518416+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "baseline",
+    "feature_ids": [],
+    "tags": [],
+    "objective_performance": -25.5231
+  }
+}

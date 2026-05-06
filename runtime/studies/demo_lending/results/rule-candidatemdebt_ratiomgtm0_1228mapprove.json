@@ -1,0 +1,82 @@
+{
+  "scenario_id": "rule-candidatemdebt_ratiomgtm0_1228mapprove",
+  "scenario_name": "Add rule: approve when debt_ratio > 0.1228",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.9018,
+    "review_rate": 0.0,
+    "rejection_rate": 0.0982,
+    "expected_profit": 105.50935049999997,
+    "expected_profit_index": 101.87148660509872,
+    "risk_estimate": 0.16106675537813261,
+    "churn_estimate": 0.1596806387225549,
+    "out_of_support_ratio": 0.3776890663118208,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "debt_ratio",
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 5,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17055
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 981
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 1964
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 18036
+    },
+    {
+      "decision": "reject",
+      "count": 1964
+    }
+  ],
+  "created_at": "2026-05-06T08:41:38.547352+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "simple_rule_candidate",
+      "summary": "approve when debt_ratio > 0.1228",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when debt_ratio > 0.1228"
+      ]
+    }
+  }
+}

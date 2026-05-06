@@ -1,0 +1,62 @@
+{
+  "scenario_id": "rule-candidatemsignalmz1mx4mapprove",
+  "name": "Add rule: approve when any of z1 == 0 or x4 == 0",
+  "description": "Simple rule candidate generated from an analysis feature outside the baseline structure.",
+  "policy": {
+    "policy_id": "eligibility-baseline-scratch-search",
+    "name": "Scratch search base",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "candidate-signal-z1-x4-approve",
+        "name": "approve when any of z1 or x4",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-signal-z1-x4-approve-block",
+            "name": "z1-x4 signals",
+            "predicates": [
+              {
+                "field": "z1",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x4",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Signal bundle candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "parameter_sweep",
+        "candidate_kind": "signal_bundle_candidate",
+        "summary": "approve when any of z1 == 0 or x4 == 0",
+        "threshold_overrides": {},
+        "added_rules": [
+          "approve when any of z1 == 0 or x4 == 0"
+        ]
+      }
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "signal_bundle_candidate",
+    "guided_search"
+  ],
+  "created_at": "2026-05-06T08:24:50.793755+00:00"
+}

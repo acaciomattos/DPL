@@ -1,0 +1,82 @@
+{
+  "scenario_id": "rule-candidatemw2mltm9mapprove",
+  "scenario_name": "Add rule: approve when w2 < 9",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.8911,
+    "review_rate": 0.0,
+    "rejection_rate": 0.1089,
+    "expected_profit": 105.86345750000002,
+    "expected_profit_index": 102.21338432635592,
+    "risk_estimate": 0.15172259005723263,
+    "churn_estimate": 0.15980249130288407,
+    "out_of_support_ratio": 0.3358208955223881,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "w2",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 5,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17055
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 767
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2178
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17822
+    },
+    {
+      "decision": "reject",
+      "count": 2178
+    }
+  ],
+  "created_at": "2026-05-06T08:41:36.967813+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "simple_rule_candidate",
+      "summary": "approve when w2 < 9",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when w2 < 9"
+      ]
+    }
+  }
+}

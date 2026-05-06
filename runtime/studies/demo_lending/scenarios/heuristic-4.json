@@ -1,0 +1,99 @@
+{
+  "scenario_id": "heuristic-4",
+  "name": "Heuristic candidate 4",
+  "description": "Random bounded policy candidate.",
+  "policy": {
+    "policy_id": "eligibility-baseline-scratch-search",
+    "name": "Scratch search base",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "derived-thin-file-watch-flag",
+        "name": "Derived veto: thin_file_watch_flag",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "derived-block-thin-file-watch-flag",
+            "name": "thin_file_watch_flag block",
+            "predicates": [
+              {
+                "field": "thin_file_watch_flag",
+                "operator": "==",
+                "value": true,
+                "description": "Reject when thin_file_watch_flag is triggered."
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Flags thin-file patterns among candidate variables."
+      },
+      {
+        "rule_id": "candidate-layered-debt_ratio-x1-z1-approve",
+        "name": "approve when debt_ratio and bundled signals",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-layered-debt_ratio-x1-z1-approve-thresholds",
+            "name": "debt_ratio threshold",
+            "predicates": [
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.1228,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "candidate-layered-debt_ratio-x1-z1-approve-signals",
+            "name": "Bundled signals",
+            "predicates": [
+              {
+                "field": "x1",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "z1",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Structured rule candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "heuristic_search",
+        "candidate_kind": "guarded_rule_candidate",
+        "summary": "approve when debt_ratio < 0.1228 and any of x1 == 0 or z1 == 0; reject when thin_file_watch_flag == True",
+        "threshold_overrides": [],
+        "added_rules": [
+          "approve when debt_ratio < 0.1228 and any of x1 == 0 or z1 == 0",
+          "reject when thin_file_watch_flag == True"
+        ]
+      }
+    }
+  },
+  "feature_ids": [
+    "thin-file-watch-flag"
+  ],
+  "tags": [
+    "heuristic_search"
+  ],
+  "created_at": "2026-05-06T08:23:00.406753+00:00"
+}

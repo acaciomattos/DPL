@@ -1,0 +1,148 @@
+{
+  "study_id": "demo_lending",
+  "configs": [
+    {
+      "config_id": "matrix-workspace-teste-1",
+      "name": "Workspace Teste 1",
+      "workspace_id": "default",
+      "author": "local_user",
+      "parent_config_id": null,
+      "created_at": "2026-05-04T22:09:04.805275+00:00",
+      "updated_at": "2026-05-04T22:09:04.805275+00:00",
+      "manual_ui_state": {
+        "study_id": "demo_lending",
+        "filters": {
+          "months": [
+            "202405",
+            "202406",
+            "202407",
+            "202408",
+            "202409",
+            "202410",
+            "202411",
+            "202412"
+          ],
+          "segment_field": "segment",
+          "segment_values": [
+            "near-prime",
+            "prime",
+            "standard"
+          ]
+        },
+        "cutoff": {
+          "objective": "approval",
+          "handle": null,
+          "target_value": 80
+        },
+        "updated_at": "2026-05-04T22:07:55.688072+00:00"
+      },
+      "rule_state": {
+        "study_id": "demo_lending",
+        "used_asset_ids": [
+          "custom:variant-approve-resilient-applicants-teste-1",
+          "custom:matrix-asset-teste-3",
+          "custom:matrix-teste-1",
+          "baseline:approve-stable"
+        ],
+        "used_rule_ids": [
+          "approve-stable"
+        ],
+        "available_rule_ids": [
+          "approve-prime"
+        ],
+        "used_custom_rule_ids": [
+          "variant-approve-resilient-applicants-teste-1",
+          "matrix-asset-teste-3",
+          "matrix-teste-1"
+        ],
+        "available_custom_rule_ids": [
+          "matrix-regra-editavel",
+          "matrix-teste-2",
+          "variant-approve-resilient-applicants-teste-2",
+          "variant-approve-resilient-applicants-teste-3",
+          "variant-approve-resilient-applicants-2"
+        ],
+        "selected_feature_ids": [],
+        "available_feature_ids": [
+          "risk-buffer-flag",
+          "thin-file-watch-flag",
+          "blended_quality_flag"
+        ]
+      },
+      "cutoff_override": null
+    },
+    {
+      "config_id": "matrix-workspace-manual-2",
+      "name": "Workspace manual 2",
+      "workspace_id": "default",
+      "author": "local_user",
+      "parent_config_id": null,
+      "created_at": "2026-05-06T08:55:30.919798+00:00",
+      "updated_at": "2026-05-06T08:55:30.919798+00:00",
+      "manual_ui_state": {
+        "study_id": "demo_lending",
+        "filters": {
+          "months": [
+            "202401",
+            "202402",
+            "202403",
+            "202404",
+            "202405",
+            "202406",
+            "202407",
+            "202408",
+            "202409",
+            "202410",
+            "202411",
+            "202412"
+          ],
+          "segment_field": "segment",
+          "segment_values": [
+            "near-prime",
+            "prime",
+            "standard",
+            "watchlist"
+          ]
+        },
+        "cutoff": {
+          "objective": "approval",
+          "handle": null,
+          "target_value": 80
+        },
+        "updated_at": "2026-05-06T08:55:12.543261+00:00"
+      },
+      "rule_state": {
+        "study_id": "demo_lending",
+        "used_asset_ids": [
+          "baseline:approve-prime",
+          "custom:matrix-asset-teste-3",
+          "baseline:approve-stable"
+        ],
+        "used_rule_ids": [
+          "approve-prime",
+          "approve-stable"
+        ],
+        "available_rule_ids": [],
+        "used_custom_rule_ids": [
+          "matrix-asset-teste-3"
+        ],
+        "available_custom_rule_ids": [
+          "matrix-regra-editavel",
+          "matrix-teste-1",
+          "matrix-teste-2",
+          "variant-approve-resilient-applicants-teste-1",
+          "variant-approve-resilient-applicants-teste-2",
+          "variant-approve-resilient-applicants-teste-3",
+          "variant-approve-resilient-applicants-2"
+        ],
+        "selected_feature_ids": [],
+        "available_feature_ids": [
+          "risk-buffer-flag",
+          "thin-file-watch-flag",
+          "blended_quality_flag"
+        ]
+      },
+      "cutoff_override": null
+    }
+  ]
+}

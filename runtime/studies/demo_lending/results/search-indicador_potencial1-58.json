@@ -1,0 +1,85 @@
+{
+  "scenario_id": "search-indicador_potencial1-58",
+  "scenario_name": "Approve resilient applicants: indicador_potencial1 > 58",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.7082,
+    "review_rate": 0.0,
+    "rejection_rate": 0.2918,
+    "expected_profit": 99.57321200000005,
+    "expected_profit_index": 96.14002061821681,
+    "risk_estimate": 0.05655182151934482,
+    "churn_estimate": 0.1557469641344253,
+    "out_of_support_ratio": 0.29116068907088394,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 4,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 14164
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 2891
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2945
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 14164
+    },
+    {
+      "decision": "reject",
+      "count": 5836
+    }
+  ],
+  "created_at": "2026-05-06T08:34:24.613108+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "threshold_override",
+      "summary": "Approve resilient applicants: indicador_potencial1 > 58",
+      "threshold_overrides": [
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "indicador_potencial1",
+          "operator": ">",
+          "value": 58
+        }
+      ],
+      "added_rules": []
+    }
+  }
+}

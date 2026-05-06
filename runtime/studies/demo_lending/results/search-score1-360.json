@@ -1,0 +1,85 @@
+{
+  "scenario_id": "search-score1-360",
+  "scenario_name": "Approve resilient applicants: score1 > 360",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.84145,
+    "review_rate": 0.0,
+    "rejection_rate": 0.15855,
+    "expected_profit": 105.01141250000005,
+    "expected_profit_index": 101.39071704243175,
+    "risk_estimate": 0.12395270069522847,
+    "churn_estimate": 0.1584170182423198,
+    "out_of_support_ratio": 0.2878364727553628,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 4,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 16829
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 226
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2945
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 16829
+    },
+    {
+      "decision": "reject",
+      "count": 3171
+    }
+  ],
+  "created_at": "2026-05-06T08:34:20.491505+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "threshold_override",
+      "summary": "Approve resilient applicants: score1 > 360",
+      "threshold_overrides": [
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "score1",
+          "operator": ">",
+          "value": 360
+        }
+      ],
+      "added_rules": []
+    }
+  }
+}

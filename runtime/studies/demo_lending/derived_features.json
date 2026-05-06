@@ -1,0 +1,43 @@
+[
+  {
+    "feature_id": "risk-buffer-flag",
+    "name": "risk_buffer_flag",
+    "expression": "(recent_income_stability < 0.38) | (debt_ratio > 0.62) | (indicador_potencial2 < 28) | (z1 == 1)",
+    "dependencies": [
+      "recent_income_stability",
+      "debt_ratio",
+      "indicador_potencial2",
+      "z1"
+    ],
+    "data_type": "bool",
+    "mode": "virtual",
+    "description": "Reusable veto for unstable or high-risk applications."
+  },
+  {
+    "feature_id": "thin-file-watch-flag",
+    "name": "thin_file_watch_flag",
+    "expression": "(w2 > 8) & ((z2 == 1) | (z3 == 1))",
+    "dependencies": [
+      "w2",
+      "z2",
+      "z3"
+    ],
+    "data_type": "bool",
+    "mode": "virtual",
+    "description": "Flags thin-file patterns among candidate variables."
+  },
+  {
+    "feature_id": "blended_quality_flag",
+    "name": "blended_quality_flag",
+    "expression": "(score2 > 520) & (indicador_potencial2 > 45) & (recent_income_stability > 0.62) & (debt_ratio < 0.42)",
+    "dependencies": [
+      "score2",
+      "indicador_potencial2",
+      "recent_income_stability",
+      "debt_ratio"
+    ],
+    "data_type": "bool",
+    "mode": "virtual",
+    "description": "Positive candidate signal built from non-baseline variables."
+  }
+]

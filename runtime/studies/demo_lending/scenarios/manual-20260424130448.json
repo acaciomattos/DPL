@@ -1,0 +1,53 @@
+{
+  "scenario_id": "manual-20260424130448",
+  "name": "Cenario manual",
+  "description": "Cenario manual sobre Retail Lending Eligibility Pilot.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "matrix-regra-editavel",
+        "name": "Regra editavel",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "matrix-cell-1",
+            "name": "Celula true x 1",
+            "predicates": [
+              {
+                "field": "thin_file_watch_flag",
+                "operator": "==",
+                "value": true,
+                "description": ""
+              },
+              {
+                "field": "z1",
+                "operator": "==",
+                "value": 1,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "any",
+        "description": "Regra criada na matriz de combinacao. Variaveis: thin_file_watch_flag x z1. Celulas selecionadas: 1."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search."
+    }
+  },
+  "feature_ids": [
+    "thin-file-watch-flag"
+  ],
+  "tags": [
+    "manual"
+  ],
+  "created_at": "2026-04-24T13:04:48.820343+00:00"
+}

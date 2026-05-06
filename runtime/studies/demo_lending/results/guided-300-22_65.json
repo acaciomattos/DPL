@@ -1,0 +1,75 @@
+{
+  "scenario_id": "guided-300-22_65",
+  "scenario_name": "Guided dual-threshold candidate",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.82425,
+    "review_rate": 0.0,
+    "rejection_rate": 0.17575,
+    "expected_profit": 105.43224850000003,
+    "expected_profit_index": 101.79704301007138,
+    "risk_estimate": 0.11301182893539581,
+    "churn_estimate": 0.15765847740370034,
+    "out_of_support_ratio": 0.12362754018804974,
+    "uncertainty_label": "medium",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "score1",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 2,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 15957
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 169
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 528
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 3346
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 16485
+    },
+    {
+      "decision": "reject",
+      "count": 3515
+    }
+  ],
+  "created_at": "2026-04-22T19:35:18.871874+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "baseline",
+    "feature_ids": [],
+    "tags": [
+      "guided_search"
+    ],
+    "objective_performance": -35.8456
+  }
+}

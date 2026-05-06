@@ -1,0 +1,90 @@
+{
+  "scenario_id": "guided-rule-candidatemscore2mgtm393mapprove",
+  "scenario_name": "Guided rule candidate: approve when score2 > 393",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.9404,
+    "review_rate": 0.0,
+    "rejection_rate": 0.0596,
+    "expected_profit": 103.7796765,
+    "expected_profit_index": 100.20145014968347,
+    "risk_estimate": 0.19975542322415993,
+    "churn_estimate": 0.1606763079540621,
+    "out_of_support_ratio": 0.2716928966397278,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 3,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 16126
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 2682
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 1192
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 18808
+    },
+    {
+      "decision": "reject",
+      "count": 1192
+    }
+  ],
+  "created_at": "2026-05-05T21:22:09.784135+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "baseline",
+    "feature_ids": [],
+    "tags": [
+      "guided_search",
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "simple_rule_candidate",
+      "summary": "approve when score2 > 393",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when score2 > 393"
+      ]
+    },
+    "objective_performance": -60.9428,
+    "objective_performance_details": {
+      "approval_delta": 13.41,
+      "profit_gain": 0.2015,
+      "risk_penalty": 29.9511,
+      "support_penalty": 32.6031,
+      "complexity_penalty": 12.0,
+      "risk_comfort_threshold": 0.05
+    }
+  }
+}

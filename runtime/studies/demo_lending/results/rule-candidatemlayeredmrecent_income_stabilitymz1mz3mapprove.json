@@ -1,0 +1,102 @@
+{
+  "scenario_id": "rule-candidatemlayeredmrecent_income_stabilitymz1mz3mapprove",
+  "scenario_name": "Add rule: approve when recent_income_stability > 0.6871 and any of z1 == 0 or z3 == 0",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.86045,
+    "review_rate": 0.0,
+    "rejection_rate": 0.13955,
+    "expected_profit": 106.06796250000005,
+    "expected_profit_index": 102.410838184895,
+    "risk_estimate": 0.12981579406124702,
+    "churn_estimate": 0.1588703585333256,
+    "out_of_support_ratio": 0.3543494683014702,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "recent_income_stability",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8",
+      "z1",
+      "z3"
+    ],
+    "rules_count": 5,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17055
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 154
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2791
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17209
+    },
+    {
+      "decision": "reject",
+      "count": 2791
+    }
+  ],
+  "created_at": "2026-05-06T08:41:41.829233+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "layered_rule_candidate",
+      "guided_search"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "layered_rule_candidate",
+      "summary": "approve when recent_income_stability > 0.6871 and any of z1 == 0 or z3 == 0",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when recent_income_stability > 0.6871 and any of z1 == 0 or z3 == 0"
+      ]
+    },
+    "objective_performance": -53.7519,
+    "objective_performance_details": {
+      "primary_metric": "approval",
+      "direction": "maximize",
+      "primary_gain": 0.77,
+      "preserve_metric": "risk",
+      "max_degradation": 1.0,
+      "constraint_delta": 0.047,
+      "constraint_violated": false,
+      "support_penalty": 42.5219,
+      "complexity_penalty": 12.0
+    },
+    "objective_spec": {
+      "primary_metric": "approval",
+      "direction": "maximize",
+      "preserve_metric": "risk",
+      "max_degradation": 1.0
+    }
+  }
+}

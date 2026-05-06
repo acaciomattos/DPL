@@ -1,0 +1,2233 @@
+{
+  "scenario_id": "manual-20260423213353",
+  "name": "Cenario manual",
+  "description": "Cenario manual sobre Retail Lending Eligibility Pilot.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "matrix-teste-1",
+        "name": "Teste 1",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "matrix-cell-1",
+            "name": "Celula [622, 657) x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-2",
+            "name": "Celula [703, 994] x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 994,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-3",
+            "name": "Celula [657, 703) x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-4",
+            "name": "Celula [596, 622) x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-5",
+            "name": "Celula [549, 572) x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-6",
+            "name": "Celula [526, 549) x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-7",
+            "name": "Celula [572, 596) x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-8",
+            "name": "Celula [499, 526) x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-9",
+            "name": "Celula [472, 499) x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-10",
+            "name": "Celula [333, 472) x [0.02, 0.11)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 333,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.02,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.11,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-11",
+            "name": "Celula [333, 472) x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 333,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-12",
+            "name": "Celula [472, 499) x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-13",
+            "name": "Celula [572, 596) x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-14",
+            "name": "Celula [596, 622) x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-15",
+            "name": "Celula [622, 657) x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-16",
+            "name": "Celula [657, 703) x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-17",
+            "name": "Celula [703, 994] x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 994,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-18",
+            "name": "Celula [549, 572) x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-19",
+            "name": "Celula [526, 549) x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-20",
+            "name": "Celula [499, 526) x [0.11, 0.16)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.11,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.16,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-21",
+            "name": "Celula [499, 526) x [0.16, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.16,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-22",
+            "name": "Celula [526, 549) x [0.16, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.16,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-23",
+            "name": "Celula [549, 572) x [0.16, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.16,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-24",
+            "name": "Celula [572, 596) x [0.16, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.16,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-25",
+            "name": "Celula [596, 622) x [0.16, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.16,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-26",
+            "name": "Celula [622, 657) x [0.16, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.16,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-27",
+            "name": "Celula [657, 703) x [0.16, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.16,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-28",
+            "name": "Celula [703, 994] x [0.16, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 994,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.16,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-29",
+            "name": "Celula [703, 994] x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 994,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-30",
+            "name": "Celula [622, 657) x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-31",
+            "name": "Celula [657, 703) x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-32",
+            "name": "Celula [572, 596) x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-33",
+            "name": "Celula [596, 622) x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-34",
+            "name": "Celula [549, 572) x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-35",
+            "name": "Celula [526, 549) x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-36",
+            "name": "Celula [499, 526) x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-37",
+            "name": "Celula [472, 499) x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-38",
+            "name": "Celula [333, 472) x [0.16, 0.2)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 333,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.16,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.2,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-39",
+            "name": "Celula [333, 472) x [0.2, 0.23)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 333,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.2,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.23,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-40",
+            "name": "Celula [472, 499) x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-41",
+            "name": "Celula [499, 526) x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-42",
+            "name": "Celula [526, 549) x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-43",
+            "name": "Celula [549, 572) x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-44",
+            "name": "Celula [572, 596) x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-45",
+            "name": "Celula [622, 657) x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-46",
+            "name": "Celula [596, 622) x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-47",
+            "name": "Celula [657, 703) x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-48",
+            "name": "Celula [703, 994] x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 994,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-49",
+            "name": "Celula [703, 994] x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 994,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-50",
+            "name": "Celula [657, 703) x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-51",
+            "name": "Celula [526, 549) x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-52",
+            "name": "Celula [549, 572) x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-53",
+            "name": "Celula [572, 596) x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-54",
+            "name": "Celula [596, 622) x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-55",
+            "name": "Celula [622, 657) x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-56",
+            "name": "Celula [333, 472) x [0.23, 0.28)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 333,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.23,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.28,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-57",
+            "name": "Celula [333, 472) x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 333,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-58",
+            "name": "Celula [472, 499) x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 472,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-59",
+            "name": "Celula [499, 526) x [0.28, 0.32)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 499,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 526,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.28,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.32,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-60",
+            "name": "Celula [622, 657) x [0.32, 0.38)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.32,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.38,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-61",
+            "name": "Celula [596, 622) x [0.32, 0.38)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.32,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.38,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-62",
+            "name": "Celula [596, 622) x [0.38, 0.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.38,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-63",
+            "name": "Celula [622, 657) x [0.38, 0.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 622,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.38,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-64",
+            "name": "Celula [657, 703) x [0.38, 0.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.38,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-65",
+            "name": "Celula [703, 994] x [0.38, 0.44)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 994,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.38,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.44,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-66",
+            "name": "Celula [703, 994] x [0.32, 0.38)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 994,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.32,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.38,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-67",
+            "name": "Celula [657, 703) x [0.32, 0.38)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.32,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.38,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-68",
+            "name": "Celula [572, 596) x [0.32, 0.38)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 596,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.32,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.38,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-69",
+            "name": "Celula [549, 572) x [0.32, 0.38)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 549,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 572,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.32,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.38,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-70",
+            "name": "Celula [657, 703) x [0.44, 0.55)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 657,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.44,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.55,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-71",
+            "name": "Celula [703, 994] x [0.44, 0.55)",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 703,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 994,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": ">=",
+                "value": 0.44,
+                "description": ""
+              },
+              {
+                "field": "debt_ratio",
+                "operator": "<",
+                "value": 0.55,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "any",
+        "description": "Regra criada na matriz de combinacao. Variaveis: score2 x debt_ratio. Celulas selecionadas: 71."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search."
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "manual"
+  ],
+  "created_at": "2026-04-23T21:33:53.063558+00:00"
+}

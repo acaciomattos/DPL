@@ -1,0 +1,83 @@
+{
+  "scenario_id": "guided-rule-candidatemscore2mgtm655mapprove",
+  "scenario_name": "Guided rule candidate: approve when score2 > 655",
+  "policy_id": "eligibility-baseline-scratch-search",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.09885,
+    "review_rate": 0.0,
+    "rejection_rate": 0.90115,
+    "expected_profit": 16.368921,
+    "expected_profit_index": 15.804535887001025,
+    "risk_estimate": 0.0,
+    "churn_estimate": 0.11583206879109763,
+    "out_of_support_ratio": 0.41679312089023773,
+    "uncertainty_label": "high",
+    "complexity_score": 25.0,
+    "features_used": [
+      "score2"
+    ],
+    "rules_count": 1,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 1977
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 18023
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 1977
+    },
+    {
+      "decision": "reject",
+      "count": 18023
+    }
+  ],
+  "created_at": "2026-05-06T08:24:15.989766+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "guided_search",
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "simple_rule_candidate",
+      "summary": "approve when score2 > 655",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when score2 > 655"
+      ]
+    },
+    "objective_performance": -37.2106,
+    "objective_performance_details": {
+      "primary_metric": "profit_index",
+      "direction": "maximize",
+      "primary_gain": 15.8045,
+      "preserve_metric": "risk",
+      "max_degradation": 0.5,
+      "constraint_delta": 0.0,
+      "constraint_violated": false,
+      "support_penalty": 50.0152,
+      "complexity_penalty": 3.0
+    },
+    "objective_spec": {
+      "primary_metric": "profit_index",
+      "direction": "maximize",
+      "preserve_metric": "risk",
+      "max_degradation": 0.5
+    }
+  }
+}

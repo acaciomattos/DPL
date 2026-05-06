@@ -1,0 +1,83 @@
+{
+  "scenario_id": "search-feature-risk-buffer-flag",
+  "scenario_name": "Derived veto risk_buffer_flag",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.61165,
+    "review_rate": 0.0,
+    "rejection_rate": 0.38835,
+    "expected_profit": 92.87989250000003,
+    "expected_profit_index": 89.67748052526173,
+    "risk_estimate": 0.027303196272377993,
+    "churn_estimate": 0.15866917354696314,
+    "out_of_support_ratio": 0.2335485980544429,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "risk_buffer_flag",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 5,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 12233
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 4822
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2945
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 12233
+    },
+    {
+      "decision": "reject",
+      "count": 7767
+    }
+  ],
+  "created_at": "2026-05-06T08:41:36.192149+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [
+      "risk-buffer-flag"
+    ],
+    "tags": [
+      "derived_feature"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "derived_veto",
+      "summary": "reject when risk_buffer_flag == True",
+      "threshold_overrides": {},
+      "added_rules": [
+        "reject when risk_buffer_flag == True"
+      ]
+    }
+  }
+}

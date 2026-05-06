@@ -1,0 +1,62 @@
+{
+  "scenario_id": "rule-candidatemcompositemscore2mindicador_potencial2mapprove",
+  "name": "Add rule: approve when score2 > 655 and indicador_potencial2 > 65.71",
+  "description": "Simple rule candidate generated from an analysis feature outside the baseline structure.",
+  "policy": {
+    "policy_id": "eligibility-baseline-scratch-search",
+    "name": "Scratch search base",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "candidate-composite-score2-indicador_potencial2-approve",
+        "name": "approve when score2 and indicador_potencial2",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-composite-score2-indicador_potencial2-approve-block",
+            "name": "score2-indicador_potencial2 block",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">",
+                "value": 655,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": ">",
+                "value": 65.71,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Composite rule candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "parameter_sweep",
+        "candidate_kind": "composite_rule_candidate",
+        "summary": "approve when score2 > 655 and indicador_potencial2 > 65.71",
+        "threshold_overrides": {},
+        "added_rules": [
+          "approve when score2 > 655 and indicador_potencial2 > 65.71"
+        ]
+      }
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "composite_rule_candidate",
+    "guided_search"
+  ],
+  "created_at": "2026-05-06T08:24:50.793755+00:00"
+}

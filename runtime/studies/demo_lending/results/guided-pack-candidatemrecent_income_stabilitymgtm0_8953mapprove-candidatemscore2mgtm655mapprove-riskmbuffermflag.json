@@ -1,0 +1,88 @@
+{
+  "scenario_id": "guided-pack-candidatemrecent_income_stabilitymgtm0_8953mapprove-candidatemscore2mgtm655mapprove-riskmbuffermflag",
+  "scenario_name": "Guided policy pack: approve",
+  "policy_id": "eligibility-baseline-scratch-search",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.15615,
+    "review_rate": 0.0,
+    "rejection_rate": 0.84385,
+    "expected_profit": 26.81936749999999,
+    "expected_profit_index": 25.894660748892296,
+    "risk_estimate": 0.0003202049311559398,
+    "churn_estimate": 0.13928914505283382,
+    "out_of_support_ratio": 0.44924751841178356,
+    "uncertainty_label": "high",
+    "complexity_score": 75.0,
+    "features_used": [
+      "recent_income_stability",
+      "risk_buffer_flag",
+      "score2"
+    ],
+    "rules_count": 3,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 3123
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 16877
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 3123
+    },
+    {
+      "decision": "reject",
+      "count": 16877
+    }
+  ],
+  "created_at": "2026-05-06T08:24:19.064959+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [
+      "risk-buffer-flag"
+    ],
+    "tags": [
+      "guided_search",
+      "policy_pack_candidate"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "policy_pack_candidate",
+      "summary": "approve when recent_income_stability > 0.8953; approve when score2 > 655; reject when risk_buffer_flag == True",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when recent_income_stability > 0.8953",
+        "approve when score2 > 655",
+        "reject when risk_buffer_flag == True"
+      ]
+    },
+    "objective_performance": -37.015,
+    "objective_performance_details": {
+      "primary_metric": "profit_index",
+      "direction": "maximize",
+      "primary_gain": 25.8947,
+      "preserve_metric": "risk",
+      "max_degradation": 0.5,
+      "constraint_delta": 0.0,
+      "constraint_violated": false,
+      "support_penalty": 53.9097,
+      "complexity_penalty": 9.0
+    },
+    "objective_spec": {
+      "primary_metric": "profit_index",
+      "direction": "maximize",
+      "preserve_metric": "risk",
+      "max_degradation": 0.5
+    }
+  }
+}

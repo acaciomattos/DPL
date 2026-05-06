@@ -1,0 +1,83 @@
+{
+  "scenario_id": "search-indicador_potencial1-53_9",
+  "scenario_name": "Approve stable recoveries: indicador_potencial1 > 53.9",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.80615,
+    "review_rate": 0.0,
+    "rejection_rate": 0.19385,
+    "expected_profit": 103.57060850000003,
+    "expected_profit_index": 99.99959061912413,
+    "risk_estimate": 0.11182782360602865,
+    "churn_estimate": 0.15691868758915833,
+    "out_of_support_ratio": 0.1304968058053712,
+    "uncertainty_label": "medium",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "score1",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 2,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 16123
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 3
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 3874
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 16123
+    },
+    {
+      "decision": "reject",
+      "count": 3877
+    }
+  ],
+  "created_at": "2026-05-06T08:30:18.864435+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "baseline",
+    "feature_ids": [],
+    "tags": [
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "threshold_override",
+      "summary": "Approve stable recoveries: indicador_potencial1 > 53.9",
+      "threshold_overrides": [
+        {
+          "rule_name": "Approve stable recoveries",
+          "field": "indicador_potencial1",
+          "operator": ">",
+          "value": 53.9
+        }
+      ],
+      "added_rules": []
+    }
+  }
+}

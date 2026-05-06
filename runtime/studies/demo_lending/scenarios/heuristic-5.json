@@ -1,0 +1,80 @@
+{
+  "scenario_id": "heuristic-5",
+  "name": "Heuristic candidate 5",
+  "description": "Random bounded policy candidate.",
+  "policy": {
+    "policy_id": "eligibility-baseline-scratch-search",
+    "name": "Scratch search base",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "derived-risk-buffer-flag",
+        "name": "Derived veto: risk_buffer_flag",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "derived-block-risk-buffer-flag",
+            "name": "risk_buffer_flag block",
+            "predicates": [
+              {
+                "field": "risk_buffer_flag",
+                "operator": "==",
+                "value": true,
+                "description": "Reject when risk_buffer_flag is triggered."
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Reusable veto for unstable or high-risk applications."
+      },
+      {
+        "rule_id": "candidate-indicador_potencial1-gt-45_51-approve",
+        "name": "approve when indicador_potencial1 > 45.51",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-indicador_potencial1-gt-45_51-approve-block",
+            "name": "indicador_potencial1 candidate block",
+            "predicates": [
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 45.51,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Simple rule candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "heuristic_search",
+        "candidate_kind": "guarded_rule_candidate",
+        "summary": "approve when indicador_potencial1 > 45.51; reject when risk_buffer_flag == True",
+        "threshold_overrides": [],
+        "added_rules": [
+          "approve when indicador_potencial1 > 45.51",
+          "reject when risk_buffer_flag == True"
+        ]
+      }
+    }
+  },
+  "feature_ids": [
+    "risk-buffer-flag"
+  ],
+  "tags": [
+    "heuristic_search"
+  ],
+  "created_at": "2026-05-06T08:23:00.406753+00:00"
+}

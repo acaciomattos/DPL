@@ -1,0 +1,174 @@
+{
+  "scenario_id": "guided-score1-262-indicador_potencial1-0_0",
+  "name": "Approve resilient applicants: score1 > 262 | Approve stable recoveries: indicador_potencial1 > 0.0",
+  "description": "Bounded multi-threshold candidate.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "approve-prime",
+        "name": "Approve resilient applicants",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "approve-prime-thresholds",
+            "name": "Resilient thresholds",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 262,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 18.0,
+                "description": ""
+              },
+              {
+                "field": "w1",
+                "operator": "<",
+                "value": 9,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "approve-prime-signals",
+            "name": "Resilient signals",
+            "predicates": [
+              {
+                "field": "x1",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x2",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x3",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x4",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Baseline rule based on score1, indicator_potencial1, w1 and the first set of baseline boolean signals."
+      },
+      {
+        "rule_id": "approve-stable",
+        "name": "Approve stable recoveries",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "approve-stable-thresholds",
+            "name": "Stable thresholds",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 360,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 0.0,
+                "description": ""
+              },
+              {
+                "field": "w1",
+                "operator": "<",
+                "value": 9,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "approve-stable-signals",
+            "name": "Stable recovery signals",
+            "predicates": [
+              {
+                "field": "x5",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x6",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x7",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x8",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Second baseline block covering remaining baseline signals x5 to x8 together with score1, w1 and indicator_potencial1."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "baseline_study",
+      "search_details": {
+        "strategy": "guided_search",
+        "candidate_kind": "threshold_pair",
+        "summary": "Approve resilient applicants: score1 > 262; Approve stable recoveries: indicador_potencial1 > 0.0",
+        "threshold_overrides": [
+          {
+            "rule_name": "Approve resilient applicants",
+            "field": "score1",
+            "operator": ">",
+            "value": 262
+          },
+          {
+            "rule_name": "Approve stable recoveries",
+            "field": "indicador_potencial1",
+            "operator": ">",
+            "value": 0.0
+          }
+        ],
+        "added_rules": []
+      }
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "guided_search"
+  ],
+  "created_at": "2026-05-05T21:21:52.215776+00:00"
+}

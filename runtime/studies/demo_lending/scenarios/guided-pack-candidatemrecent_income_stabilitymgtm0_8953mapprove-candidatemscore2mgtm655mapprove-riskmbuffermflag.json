@@ -1,0 +1,104 @@
+{
+  "scenario_id": "guided-pack-candidatemrecent_income_stabilitymgtm0_8953mapprove-candidatemscore2mgtm655mapprove-riskmbuffermflag",
+  "name": "Guided policy pack: approve",
+  "description": "Guided candidate with multiple new rules and a veto.",
+  "policy": {
+    "policy_id": "eligibility-baseline-scratch-search",
+    "name": "Scratch search base",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "derived-risk-buffer-flag",
+        "name": "Derived veto: risk_buffer_flag",
+        "decision": "reject",
+        "blocks": [
+          {
+            "block_id": "derived-block-risk-buffer-flag",
+            "name": "risk_buffer_flag block",
+            "predicates": [
+              {
+                "field": "risk_buffer_flag",
+                "operator": "==",
+                "value": true,
+                "description": "Reject when risk_buffer_flag is triggered."
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Reusable veto for unstable or high-risk applications."
+      },
+      {
+        "rule_id": "candidate-recent_income_stability-gt-0_8953-approve",
+        "name": "approve when recent_income_stability > 0.8953",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-recent_income_stability-gt-0_8953-approve-block",
+            "name": "recent_income_stability candidate block",
+            "predicates": [
+              {
+                "field": "recent_income_stability",
+                "operator": ">",
+                "value": 0.8953,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Simple rule candidate generated automatically."
+      },
+      {
+        "rule_id": "candidate-score2-gt-655-approve",
+        "name": "approve when score2 > 655",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-score2-gt-655-approve-block",
+            "name": "score2 candidate block",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">",
+                "value": 655,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Simple rule candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "guided_search",
+        "candidate_kind": "policy_pack_candidate",
+        "summary": "approve when recent_income_stability > 0.8953; approve when score2 > 655; reject when risk_buffer_flag == True",
+        "threshold_overrides": {},
+        "added_rules": [
+          "approve when recent_income_stability > 0.8953",
+          "approve when score2 > 655",
+          "reject when risk_buffer_flag == True"
+        ]
+      }
+    }
+  },
+  "feature_ids": [
+    "risk-buffer-flag"
+  ],
+  "tags": [
+    "guided_search",
+    "policy_pack_candidate"
+  ],
+  "created_at": "2026-05-06T08:24:15.819216+00:00"
+}

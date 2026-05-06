@@ -1,0 +1,83 @@
+{
+  "scenario_id": "rule-candidatemcompositemdebt_ratiomscore2mapprove",
+  "scenario_name": "Add rule: approve when debt_ratio < 0.1228 and score2 > 655",
+  "policy_id": "eligibility-baseline-scratch-search",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.01495,
+    "review_rate": 0.0,
+    "rejection_rate": 0.98505,
+    "expected_profit": 2.5975965000000003,
+    "expected_profit_index": 2.5080337979637304,
+    "risk_estimate": 0.0,
+    "churn_estimate": 0.12374581939799331,
+    "out_of_support_ratio": 0.6086956521739131,
+    "uncertainty_label": "high",
+    "complexity_score": 38.0,
+    "features_used": [
+      "debt_ratio",
+      "score2"
+    ],
+    "rules_count": 1,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 299
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 19701
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 299
+    },
+    {
+      "decision": "reject",
+      "count": 19701
+    }
+  ],
+  "created_at": "2026-05-06T08:24:52.734991+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "composite_rule_candidate",
+      "guided_search"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "composite_rule_candidate",
+      "summary": "approve when debt_ratio < 0.1228 and score2 > 655",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when debt_ratio < 0.1228 and score2 > 655"
+      ]
+    },
+    "objective_performance": -75.0954,
+    "objective_performance_details": {
+      "primary_metric": "profit_index",
+      "direction": "maximize",
+      "primary_gain": 2.508,
+      "preserve_metric": "risk",
+      "max_degradation": 0.5,
+      "constraint_delta": 0.0,
+      "constraint_violated": false,
+      "support_penalty": 73.0435,
+      "complexity_penalty": 4.56
+    },
+    "objective_spec": {
+      "primary_metric": "profit_index",
+      "direction": "maximize",
+      "preserve_metric": "risk",
+      "max_degradation": 0.5
+    }
+  }
+}

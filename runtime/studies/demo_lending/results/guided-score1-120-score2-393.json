@@ -1,0 +1,91 @@
+{
+  "scenario_id": "guided-score1-120-score2-393",
+  "scenario_name": "Approve resilient applicants: score1 > 120 | Teste 3 :: approve: score2 < 393",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.92045,
+    "review_rate": 0.0,
+    "rejection_rate": 0.07955,
+    "expected_profit": 106.05947150000003,
+    "expected_profit_index": 102.40263994664724,
+    "risk_estimate": 0.17040577978162855,
+    "churn_estimate": 0.16003041990330816,
+    "out_of_support_ratio": 0.3172361344994296,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 4,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17055
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 1354
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 1591
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 18409
+    },
+    {
+      "decision": "reject",
+      "count": 1591
+    }
+  ],
+  "created_at": "2026-05-06T08:41:46.741753+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "guided_search"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "threshold_pair",
+      "summary": "Approve resilient applicants: score1 > 120; Teste 3 :: approve: score2 < 393",
+      "threshold_overrides": [
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "score1",
+          "operator": ">",
+          "value": 120
+        },
+        {
+          "rule_name": "Teste 3 :: approve",
+          "field": "score2",
+          "operator": "<",
+          "value": 393
+        }
+      ],
+      "added_rules": []
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "scenario_id": "heuristic-2",
+  "scenario_name": "Heuristic candidate 2",
+  "policy_id": "eligibility-baseline-scratch-search",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.498,
+    "review_rate": 0.0,
+    "rejection_rate": 0.502,
+    "expected_profit": 80.85749199999998,
+    "expected_profit_index": 78.0696011696127,
+    "risk_estimate": 0.017570281124497992,
+    "churn_estimate": 0.15943775100401605,
+    "out_of_support_ratio": 0.08042168674698795,
+    "uncertainty_label": "medium",
+    "complexity_score": 51.0,
+    "features_used": [
+      "recent_income_stability",
+      "x4",
+      "x8"
+    ],
+    "rules_count": 1,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 9960
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 10040
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 9960
+    },
+    {
+      "decision": "reject",
+      "count": 10040
+    }
+  ],
+  "created_at": "2026-05-06T09:20:03.671895+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "heuristic_search"
+    ],
+    "search_details": {
+      "strategy": "heuristic_search",
+      "candidate_kind": "layered_rule_candidate",
+      "summary": "approve when recent_income_stability > 0.6871 and any of x8 == 0 or x4 == 0",
+      "threshold_overrides": [],
+      "added_rules": [
+        "approve when recent_income_stability > 0.6871 and any of x8 == 0 or x4 == 0"
+      ]
+    },
+    "objective_performance": 34.0294,
+    "objective_performance_details": {
+      "primary_metric": "approval",
+      "direction": "maximize",
+      "primary_gain": 49.8,
+      "preserve_metric": "risk",
+      "max_degradation": 2.0,
+      "constraint_delta": 0.0,
+      "constraint_violated": false,
+      "support_penalty": 9.6506,
+      "complexity_penalty": 6.12
+    },
+    "objective_spec": {
+      "primary_metric": "approval",
+      "direction": "maximize",
+      "preserve_metric": "risk",
+      "max_degradation": 2.0
+    },
+    "pareto_front": 1
+  }
+}

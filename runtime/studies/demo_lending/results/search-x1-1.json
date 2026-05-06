@@ -1,0 +1,90 @@
+{
+  "scenario_id": "search-x1-1",
+  "scenario_name": "Approve resilient applicants: x1 == 1",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.8526,
+    "review_rate": 0.0,
+    "rejection_rate": 0.1474,
+    "expected_profit": 105.31607550000005,
+    "expected_profit_index": 101.68487554664478,
+    "risk_estimate": 0.1291344123856439,
+    "churn_estimate": 0.159101571663148,
+    "out_of_support_ratio": 0.2896434435843303,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 4,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17045
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 10
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 7
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2938
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17052
+    },
+    {
+      "decision": "reject",
+      "count": 2948
+    }
+  ],
+  "created_at": "2026-05-06T08:34:27.329197+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "threshold_override",
+      "summary": "Approve resilient applicants: x1 == 1",
+      "threshold_overrides": [
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "x1",
+          "operator": "==",
+          "value": 1
+        }
+      ],
+      "added_rules": []
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "scenario_id": "guided-rule-candidatemw2mgtm9mapprove",
+  "scenario_name": "Guided rule candidate: approve when w2 > 9",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.8625,
+    "review_rate": 0.0,
+    "rejection_rate": 0.1375,
+    "expected_profit": 105.13905600000005,
+    "expected_profit_index": 99.82910071094405,
+    "risk_estimate": 0.13750724637681158,
+    "churn_estimate": 0.1592463768115942,
+    "out_of_support_ratio": 0.32156521739130434,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "w2",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 5,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17060
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 190
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2750
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17250
+    },
+    {
+      "decision": "reject",
+      "count": 2750
+    }
+  ],
+  "created_at": "2026-05-05T21:51:28.848434+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "guided_search",
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "simple_rule_candidate",
+      "summary": "approve when w2 > 9",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when w2 > 9"
+      ]
+    },
+    "objective_performance": -67.3102,
+    "objective_performance_details": {
+      "approval_delta": 0.95,
+      "profit_gain": -0.1709,
+      "risk_penalty": 17.5014,
+      "support_penalty": 38.5878,
+      "complexity_penalty": 12.0,
+      "risk_comfort_threshold": 0.05
+    }
+  }
+}

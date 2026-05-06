@@ -1,0 +1,76 @@
+{
+  "scenario_id": "rule-candidatemlayeredmrecent_income_stabilitymx1mx8mapprove",
+  "scenario_name": "Add rule: approve when recent_income_stability > 0.6871 and any of x8 == 0 or x1 == 0",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.4982,
+    "review_rate": 0.0,
+    "rejection_rate": 0.5018,
+    "expected_profit": 80.85683099999999,
+    "expected_profit_index": 78.06896296027556,
+    "risk_estimate": 0.017864311521477317,
+    "churn_estimate": 0.159273384183059,
+    "out_of_support_ratio": 0.08059012444801285,
+    "uncertainty_label": "medium",
+    "complexity_score": 51.0,
+    "features_used": [
+      "recent_income_stability",
+      "x1",
+      "x8"
+    ],
+    "rules_count": 1,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 9388
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 6738
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 576
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 3298
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 9964
+    },
+    {
+      "decision": "reject",
+      "count": 10036
+    }
+  ],
+  "created_at": "2026-05-06T08:30:24.789107+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "baseline",
+    "feature_ids": [],
+    "tags": [
+      "layered_rule_candidate",
+      "guided_search"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "layered_rule_candidate",
+      "summary": "approve when recent_income_stability > 0.6871 and any of x8 == 0 or x1 == 0",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when recent_income_stability > 0.6871 and any of x8 == 0 or x1 == 0"
+      ]
+    }
+  }
+}

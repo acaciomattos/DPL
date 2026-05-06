@@ -1,0 +1,57 @@
+{
+  "scenario_id": "guided-rule-candidatemscore2mgtm655mapprove",
+  "name": "Guided rule candidate: approve when score2 > 655",
+  "description": "Guided candidate created from an analysis feature.",
+  "policy": {
+    "policy_id": "eligibility-baseline-scratch-search",
+    "name": "Scratch search base",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "candidate-score2-gt-655-approve",
+        "name": "approve when score2 > 655",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-score2-gt-655-approve-block",
+            "name": "score2 candidate block",
+            "predicates": [
+              {
+                "field": "score2",
+                "operator": ">",
+                "value": 655,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Simple rule candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "guided_search",
+        "candidate_kind": "simple_rule_candidate",
+        "summary": "approve when score2 > 655",
+        "threshold_overrides": {},
+        "added_rules": [
+          "approve when score2 > 655"
+        ]
+      }
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "guided_search",
+    "simple_rule_candidate",
+    "parameter_sweep"
+  ],
+  "created_at": "2026-05-06T08:24:12.854843+00:00"
+}

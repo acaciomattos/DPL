@@ -1,0 +1,96 @@
+{
+  "scenario_id": "guided-score1-120-indicador_potencial1-23",
+  "scenario_name": "Approve resilient applicants: score1 > 120 | Approve resilient applicants: indicador_potencial1 > 23",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.90285,
+    "review_rate": 0.0,
+    "rejection_rate": 0.09715,
+    "expected_profit": 106.42638899999999,
+    "expected_profit_index": 102.75690647382505,
+    "risk_estimate": 0.15439995569585202,
+    "churn_estimate": 0.16004873456277344,
+    "out_of_support_ratio": 0.3105166971257684,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 4,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 16847
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 208
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 1210
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 1735
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 18057
+    },
+    {
+      "decision": "reject",
+      "count": 1943
+    }
+  ],
+  "created_at": "2026-05-06T08:41:42.711295+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "guided_search"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "threshold_pair",
+      "summary": "Approve resilient applicants: score1 > 120; Approve resilient applicants: indicador_potencial1 > 23",
+      "threshold_overrides": [
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "score1",
+          "operator": ">",
+          "value": 120
+        },
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "indicador_potencial1",
+          "operator": ">",
+          "value": 23
+        }
+      ],
+      "added_rules": []
+    }
+  }
+}

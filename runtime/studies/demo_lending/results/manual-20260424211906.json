@@ -1,0 +1,65 @@
+{
+  "scenario_id": "manual-20260424211906",
+  "scenario_name": "Cenario manual",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.4428416485900217,
+    "review_rate": 0.0,
+    "rejection_rate": 0.5571583514099783,
+    "expected_profit": 63.125151843817775,
+    "expected_profit_index": 72.24224724524672,
+    "risk_estimate": 0.034778349253000246,
+    "churn_estimate": 0.15258388439872642,
+    "out_of_support_ratio": 0.186382561841783,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial2",
+      "score2"
+    ],
+    "rules_count": 1,
+    "records_evaluated": 9220
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 3666
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 3087
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 417
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2050
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 4083
+    },
+    {
+      "decision": "reject",
+      "count": 5137
+    }
+  ],
+  "created_at": "2026-04-24T21:19:06.826151+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "baseline",
+    "feature_ids": [],
+    "tags": [
+      "manual"
+    ]
+  }
+}

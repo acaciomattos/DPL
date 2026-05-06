@@ -1,0 +1,62 @@
+{
+  "scenario_id": "rule-candidatemcompositemrecent_income_stabilitymscore2mapprove",
+  "name": "Add rule: approve when recent_income_stability > 0.8953 and score2 > 655",
+  "description": "Simple rule candidate generated from an analysis feature outside the baseline structure.",
+  "policy": {
+    "policy_id": "eligibility-baseline-scratch-search",
+    "name": "Scratch search base",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "candidate-composite-recent_income_stability-score2-approve",
+        "name": "approve when recent_income_stability and score2",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-composite-recent_income_stability-score2-approve-block",
+            "name": "recent_income_stability-score2 block",
+            "predicates": [
+              {
+                "field": "recent_income_stability",
+                "operator": ">",
+                "value": 0.8953,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">",
+                "value": 655,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Composite rule candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "parameter_sweep",
+        "candidate_kind": "composite_rule_candidate",
+        "summary": "approve when recent_income_stability > 0.8953 and score2 > 655",
+        "threshold_overrides": {},
+        "added_rules": [
+          "approve when recent_income_stability > 0.8953 and score2 > 655"
+        ]
+      }
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "composite_rule_candidate",
+    "guided_search"
+  ],
+  "created_at": "2026-05-06T08:24:50.793755+00:00"
+}

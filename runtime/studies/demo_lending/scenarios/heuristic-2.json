@@ -1,0 +1,74 @@
+{
+  "scenario_id": "heuristic-2",
+  "name": "Heuristic candidate 2",
+  "description": "Random bounded policy candidate.",
+  "policy": {
+    "policy_id": "eligibility-baseline-scratch-search",
+    "name": "Scratch search base",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "candidate-layered-recent_income_stability-x4-x8-approve",
+        "name": "approve when recent_income_stability and bundled signals",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "candidate-layered-recent_income_stability-x4-x8-approve-thresholds",
+            "name": "recent_income_stability threshold",
+            "predicates": [
+              {
+                "field": "recent_income_stability",
+                "operator": ">",
+                "value": 0.6871,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "candidate-layered-recent_income_stability-x4-x8-approve-signals",
+            "name": "Bundled signals",
+            "predicates": [
+              {
+                "field": "x8",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x4",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Structured rule candidate generated automatically."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search.",
+      "search_base": "from_scratch",
+      "search_details": {
+        "strategy": "heuristic_search",
+        "candidate_kind": "layered_rule_candidate",
+        "summary": "approve when recent_income_stability > 0.6871 and any of x8 == 0 or x4 == 0",
+        "threshold_overrides": [],
+        "added_rules": [
+          "approve when recent_income_stability > 0.6871 and any of x8 == 0 or x4 == 0"
+        ]
+      }
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "heuristic_search"
+  ],
+  "created_at": "2026-05-06T09:20:02.590332+00:00"
+}

@@ -1,0 +1,100 @@
+{
+  "scenario_id": "guided-score1-262-score1-120",
+  "scenario_name": "Approve resilient applicants: score1 > 262 | Approve stable recoveries: score1 > 120",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.91955,
+    "review_rate": 0.0,
+    "rejection_rate": 0.08045,
+    "expected_profit": 106.093526,
+    "expected_profit_index": 100.73536604545086,
+    "risk_estimate": 0.1694850742210864,
+    "churn_estimate": 0.16007829916807134,
+    "out_of_support_ratio": 0.31635038877711924,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 4,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17060
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 1331
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 1609
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 18391
+    },
+    {
+      "decision": "reject",
+      "count": 1609
+    }
+  ],
+  "created_at": "2026-05-05T21:51:23.104101+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "guided_search"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "threshold_pair",
+      "summary": "Approve resilient applicants: score1 > 262; Approve stable recoveries: score1 > 120",
+      "threshold_overrides": [
+        {
+          "rule_name": "Approve resilient applicants",
+          "field": "score1",
+          "operator": ">",
+          "value": 262
+        },
+        {
+          "rule_name": "Approve stable recoveries",
+          "field": "score1",
+          "operator": ">",
+          "value": 120
+        }
+      ],
+      "added_rules": []
+    },
+    "objective_performance": -66.4687,
+    "objective_performance_details": {
+      "approval_delta": 6.655,
+      "profit_gain": 0.7354,
+      "risk_penalty": 23.897,
+      "support_penalty": 37.962,
+      "complexity_penalty": 12.0,
+      "risk_comfort_threshold": 0.05
+    }
+  }
+}

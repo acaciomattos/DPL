@@ -1,0 +1,100 @@
+{
+  "scenario_id": "rule-candidatemdebt_ratiomltm0_1228mapprove",
+  "scenario_name": "Add rule: approve when debt_ratio < 0.1228",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.8539,
+    "review_rate": 0.0,
+    "rejection_rate": 0.1461,
+    "expected_profit": 105.45082400000004,
+    "expected_profit_index": 101.81497804417468,
+    "risk_estimate": 0.1292891439278604,
+    "churn_estimate": 0.15921068040754185,
+    "out_of_support_ratio": 0.35027520786977395,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "debt_ratio",
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 5,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17055
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 23
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2922
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17078
+    },
+    {
+      "decision": "reject",
+      "count": 2922
+    }
+  ],
+  "created_at": "2026-05-06T08:41:38.462914+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "simple_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "simple_rule_candidate",
+      "summary": "approve when debt_ratio < 0.1228",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when debt_ratio < 0.1228"
+      ]
+    },
+    "objective_performance": -53.918,
+    "objective_performance_details": {
+      "primary_metric": "approval",
+      "direction": "maximize",
+      "primary_gain": 0.115,
+      "preserve_metric": "risk",
+      "max_degradation": 1.0,
+      "constraint_delta": 0.0,
+      "constraint_violated": false,
+      "support_penalty": 42.033,
+      "complexity_penalty": 12.0
+    },
+    "objective_spec": {
+      "primary_metric": "approval",
+      "direction": "maximize",
+      "preserve_metric": "risk",
+      "max_degradation": 1.0
+    }
+  }
+}

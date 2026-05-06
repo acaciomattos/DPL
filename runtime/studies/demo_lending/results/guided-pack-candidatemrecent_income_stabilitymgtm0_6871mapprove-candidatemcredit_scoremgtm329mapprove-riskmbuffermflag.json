@@ -1,0 +1,93 @@
+{
+  "scenario_id": "guided-pack-candidatemrecent_income_stabilitymgtm0_6871mapprove-candidatemcredit_scoremgtm329mapprove-riskmbuffermflag",
+  "scenario_name": "Guided policy pack: approve",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.6229,
+    "review_rate": 0.0,
+    "rejection_rate": 0.3771,
+    "expected_profit": 93.65970300000002,
+    "expected_profit_index": 90.43040388730313,
+    "risk_estimate": 0.03242896131000161,
+    "churn_estimate": 0.15885374859528015,
+    "out_of_support_ratio": 0.2851982661743458,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "credit_score",
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "recent_income_stability",
+      "risk_buffer_flag",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 7,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 12233
+    },
+    {
+      "from_decision": "approve",
+      "to_decision": "reject",
+      "count": 4822
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 225
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2720
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 12458
+    },
+    {
+      "decision": "reject",
+      "count": 7542
+    }
+  ],
+  "created_at": "2026-05-06T08:41:51.016882+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [
+      "risk-buffer-flag"
+    ],
+    "tags": [
+      "guided_search",
+      "policy_pack_candidate"
+    ],
+    "search_details": {
+      "strategy": "guided_search",
+      "candidate_kind": "policy_pack_candidate",
+      "summary": "approve when recent_income_stability > 0.6871; approve when credit_score > 329; reject when risk_buffer_flag == True",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when recent_income_stability > 0.6871",
+        "approve when credit_score > 329",
+        "reject when risk_buffer_flag == True"
+      ]
+    }
+  }
+}

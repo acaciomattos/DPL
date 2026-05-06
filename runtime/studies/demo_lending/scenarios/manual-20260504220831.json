@@ -1,0 +1,658 @@
+{
+  "scenario_id": "manual-20260504220831",
+  "name": "Cenario manual",
+  "description": "Cenario manual sobre Retail Lending Eligibility Pilot.",
+  "policy": {
+    "policy_id": "eligibility-baseline",
+    "name": "Eligibility Baseline",
+    "version": "v1.5",
+    "decision_column": "simulated_decision",
+    "default_decision": "reject",
+    "rules": [
+      {
+        "rule_id": "rule-approve-resilient-applicants-teste-1",
+        "name": "Approve resilient applicants teste 1",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "approve-prime-thresholds",
+            "name": "Resilient thresholds",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 759,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 18,
+                "description": ""
+              },
+              {
+                "field": "w1",
+                "operator": "<",
+                "value": 9,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "approve-prime-signals",
+            "name": "Resilient signals",
+            "predicates": [
+              {
+                "field": "x1",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x2",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x3",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x4",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Variante governada da regra baseline 'Approve resilient applicants'. Origem: approve-prime. Versao: 1."
+      },
+      {
+        "rule_id": "matrix-teste-1",
+        "name": "Teste 1",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "matrix-cell-1",
+            "name": "Celula [57.19, 93.94] x [120, 343)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 120,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 343,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-2",
+            "name": "Celula [57.19, 93.94] x [343, 375)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 343,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 375,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-3",
+            "name": "Celula [57.19, 93.94] x [375, 395)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 375,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 395,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-4",
+            "name": "Celula [57.19, 93.94] x [395, 411)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 395,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 411,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-5",
+            "name": "Celula [57.19, 93.94] x [411, 427)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 411,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 427,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-6",
+            "name": "Celula [57.19, 93.94] x [427, 442)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 427,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 442,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-7",
+            "name": "Celula [57.19, 93.94] x [442, 461)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 442,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 461,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-8",
+            "name": "Celula [57.19, 93.94] x [461, 482)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 461,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 482,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-9",
+            "name": "Celula [57.19, 93.94] x [482, 510)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 482,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 510,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-10",
+            "name": "Celula [57.19, 93.94] x [510, 762]",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<=",
+                "value": 93.94,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 510,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<=",
+                "value": 762,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-11",
+            "name": "Celula [41.79, 45.21) x [120, 343)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 41.79,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 45.21,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 120,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 343,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-12",
+            "name": "Celula [41.79, 45.21) x [343, 375)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 41.79,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 45.21,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 343,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 375,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-13",
+            "name": "Celula [45.21, 49.53) x [120, 343)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 45.21,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 49.53,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 120,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 343,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-14",
+            "name": "Celula [45.21, 49.53) x [343, 375)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 45.21,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 49.53,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 343,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 375,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-15",
+            "name": "Celula [49.53, 57.19) x [120, 343)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.53,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 120,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 343,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "matrix-cell-16",
+            "name": "Celula [49.53, 57.19) x [343, 375)",
+            "predicates": [
+              {
+                "field": "indicador_potencial2",
+                "operator": ">=",
+                "value": 49.53,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial2",
+                "operator": "<",
+                "value": 57.19,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": ">=",
+                "value": 343,
+                "description": ""
+              },
+              {
+                "field": "score2",
+                "operator": "<",
+                "value": 375,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          }
+        ],
+        "block_combiner": "any",
+        "description": "Regra criada na matriz de combinacao. Variaveis: indicador_potencial2 x score2. Celulas selecionadas: 16."
+      },
+      {
+        "rule_id": "approve-stable",
+        "name": "Approve stable recoveries",
+        "decision": "approve",
+        "blocks": [
+          {
+            "block_id": "approve-stable-thresholds",
+            "name": "Stable thresholds",
+            "predicates": [
+              {
+                "field": "score1",
+                "operator": ">",
+                "value": 360,
+                "description": ""
+              },
+              {
+                "field": "indicador_potencial1",
+                "operator": ">",
+                "value": 20.0,
+                "description": ""
+              },
+              {
+                "field": "w1",
+                "operator": "<",
+                "value": 9,
+                "description": ""
+              }
+            ],
+            "logical_operator": "all"
+          },
+          {
+            "block_id": "approve-stable-signals",
+            "name": "Stable recovery signals",
+            "predicates": [
+              {
+                "field": "x5",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x6",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x7",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              },
+              {
+                "field": "x8",
+                "operator": "==",
+                "value": 0,
+                "description": ""
+              }
+            ],
+            "logical_operator": "any"
+          }
+        ],
+        "block_combiner": "all",
+        "description": "Second baseline block covering remaining baseline signals x5 to x8 together with score1, w1 and indicator_potencial1."
+      }
+    ],
+    "metadata": {
+      "source_adapter": "python",
+      "notes": "Prompt-aligned baseline using score1, x1..x8, w1 and indicador_potencial1. Candidate variables remain available for manual and automatic policy search."
+    }
+  },
+  "feature_ids": [],
+  "tags": [
+    "manual"
+  ],
+  "created_at": "2026-05-04T22:08:31.389284+00:00"
+}

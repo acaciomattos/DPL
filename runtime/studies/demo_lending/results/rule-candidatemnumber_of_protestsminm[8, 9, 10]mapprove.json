@@ -1,0 +1,100 @@
+{
+  "scenario_id": "rule-candidatemnumber_of_protestsminm[8, 9, 10]mapprove",
+  "scenario_name": "Add rule: approve when number_of_protests in [8, 9, 10]",
+  "policy_id": "eligibility-baseline",
+  "study_id": "demo_lending",
+  "metrics": {
+    "approval_rate": 0.8583,
+    "review_rate": 0.0,
+    "rejection_rate": 0.1417,
+    "expected_profit": 105.26239650000008,
+    "expected_profit_index": 101.63304734844662,
+    "risk_estimate": 0.13311196551322382,
+    "churn_estimate": 0.15950133985785855,
+    "out_of_support_ratio": 0.2942444366771525,
+    "uncertainty_label": "high",
+    "complexity_score": 100.0,
+    "features_used": [
+      "indicador_potencial1",
+      "indicador_potencial2",
+      "number_of_protests",
+      "score1",
+      "score2",
+      "w1",
+      "x1",
+      "x2",
+      "x3",
+      "x4",
+      "x5",
+      "x6",
+      "x7",
+      "x8"
+    ],
+    "rules_count": 5,
+    "records_evaluated": 20000
+  },
+  "transitions": [
+    {
+      "from_decision": "approve",
+      "to_decision": "approve",
+      "count": 17055
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "approve",
+      "count": 111
+    },
+    {
+      "from_decision": "reject",
+      "to_decision": "reject",
+      "count": 2834
+    }
+  ],
+  "decision_distribution": [
+    {
+      "decision": "approve",
+      "count": 17166
+    },
+    {
+      "decision": "reject",
+      "count": 2834
+    }
+  ],
+  "created_at": "2026-05-06T08:41:40.099340+00:00",
+  "lineage": {
+    "type": "scenario",
+    "baseline_scenario_id": "demo_lending-search-base",
+    "feature_ids": [],
+    "tags": [
+      "grouped_rule_candidate",
+      "parameter_sweep"
+    ],
+    "search_details": {
+      "strategy": "parameter_sweep",
+      "candidate_kind": "grouped_rule_candidate",
+      "summary": "approve when number_of_protests in [8, 9, 10]",
+      "threshold_overrides": {},
+      "added_rules": [
+        "approve when number_of_protests in [8, 9, 10]"
+      ]
+    },
+    "objective_performance": -46.7543,
+    "objective_performance_details": {
+      "primary_metric": "approval",
+      "direction": "maximize",
+      "primary_gain": 0.555,
+      "preserve_metric": "risk",
+      "max_degradation": 1.0,
+      "constraint_delta": 0.3766,
+      "constraint_violated": false,
+      "support_penalty": 35.3093,
+      "complexity_penalty": 12.0
+    },
+    "objective_spec": {
+      "primary_metric": "approval",
+      "direction": "maximize",
+      "preserve_metric": "risk",
+      "max_degradation": 1.0
+    }
+  }
+}
